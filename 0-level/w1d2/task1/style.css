@@ -1,5 +1,5 @@
 #logo > img {
-  content: url("/images/just-do-it-later.png");
+  content: url("images/just-do-it-later.png");
 }
 
 nav > div:nth-child(even) {

@@ -1,0 +1,51 @@
+#logo > img {
+  content: url("/images/just-do-it-later.png");
+}
+
+nav > div:nth-child(even) {
+  color: aquamarine;
+}
+
+nav > div:nth-child(odd) {
+  font-weight: bold;
+}
+
+ul > li:nth-child(even) {
+  background-color: gray;
+  width: max-content;
+  color: white;
+}
+
+.important {
+  color: red;
+}
+
+article:nth-child(even) {
+  background-color: rgba(119, 242, 234, 0.5);
+}
+article:nth-child(odd) {
+  background-color: rgba(13, 11, 3, 0.5);
+}
+
+article:nth-child(even) > h2 {
+  color: rgba(207, 180, 10, 1);
+}
+
+article:nth-child(odd) > h2 {
+  color: white;
+}
+
+article[name="pinned-post"] {
+  background-image: url("images/pin.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: top right;
+  background-color: rgba(212, 138, 138, 0.5);
+}
+
+footer > div:first-child::before {
+  content: "🦶";
+}
+footer > div:nth-child(n + 2)::after {
+  content: "👈🏾";
+}

@@ -1,0 +1,214 @@
+@import url("@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mon");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #181414;
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
+h2 {
+  color: #ffbc5b;
+}
+.header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  min-width: 1096px;
+  justify-content: space-between;
+}
+.logo {
+  margin-left: 92px;
+  min-height: 48px;
+  min-width: 150px;
+  background-image: url("../img/cinema-logo.png");
+  background-size: 50%;
+  padding-top: 70px;
+  background-repeat: no-repeat;
+}
+.menu {
+  display: flex;
+  margin-left: 199.94px;
+  min-width: 469px;
+}
+.menu-item {
+  color: #ffbc5b;
+  align-items: center;
+  padding-top: 28px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  height: 80px;
+  flex-wrap: nowrap;
+}
+
+.menu-item:first-child {
+  border-bottom: 2px solid #ffbc5b;
+  min-width: 120px;
+}
+
+.menu-item:not(:first-child) {
+  margin-left: 41px;
+  color: #b0aba9;
+}
+
+.menu-item:not(:first-child):hover {
+  color: #ffbc5b;
+}
+.menu-item:last-child {
+  background-image: url("../img/icon_search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 25px;
+  padding-left: 25px;
+}
+
+.menu-item:last-child:hover {
+  background-image: url("../img/icon_search_orange.svg");
+}
+
+.profile {
+  margin-left: 270.69px;
+  background-image: url("../img/MyPhoto2020_small.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 44px;
+  padding-left: 44px;
+  border-radius: 50%;
+  margin-right: 117px;
+}
+.movie-content {
+  margin-top: 52px;
+  margin-left: 20%;
+  margin-right: 20%;
+  min-width: 1096px;
+  max-width: 1096px;
+}
+.section-name {
+  display: flex;
+}
+.next-movie-list-small-btn {
+  background-image: url("../img/next-button-icon.svg");
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 29px;
+  margin-left: 24px;
+  background-position: center;
+}
+.new-in-subscription-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 33px;
+}
+
+.new-in-subscription-movie-block:hover .movie-name {
+  color: white;
+}
+
+.new-in-subscription-movie-image {
+  width: 322px;
+  height: 182px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  border-radius: 15px;
+  display: flex;
+}
+
+#subscription-movie-1 .new-in-subscription-movie-image {
+  background-image: url("../img/minions.jpg");
+}
+#subscription-movie-2 .new-in-subscription-movie-image {
+  background-image: url("../img/zveropolis.jpg");
+  background-position: 0 45%;
+}
+#subscription-movie-3 .new-in-subscription-movie-image {
+  background-image: url("../img/mulan.jpeg");
+  background-position: 0 0;
+}
+
+.rating {
+  padding: 3px 12px;
+  gap: 10px;
+  background-color: #ffbc5b;
+  width: 51px;
+  height: 30px;
+  border-radius: 6px;
+  margin: 12px 250px 140px 12px;
+}
+
+.movie-name {
+  height: 21px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  color: #989898;
+  margin-top: 18px;
+}
+
+.movie-description {
+  height: 18px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #515151;
+  margin-top: 8px;
+}
+.next-movie-list-big-btn {
+  background-image: url("../img/next-button-icon.svg");
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 60px;
+  margin-top: 61px;
+  margin-left: 40px;
+  background-position: center;
+}
+
+.recomendations {
+  margin-top: 99px;
+}
+.recomendations-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 33px;
+}
+.recomendations-movie-block:hover .movie-name {
+  color: white;
+}
+
+#recomendations-movie-1 .recomendations-movie-image {
+  background-image: url("../img/doctorStrange.jpg");
+  background-position: 0 45%;
+}
+#recomendations-movie-2 .recomendations-movie-image {
+  background-image: url("../img/glass.jpg");
+}
+#recomendations-movie-3 .recomendations-movie-image {
+  background-image: url("../img/solo.jpg");
+  background-position: 0 45%;
+}
+.recomendations-movie-image {
+  width: 322px;
+  height: 485px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  border-radius: 15px;
+  display: flex;
+}
+
+.recomendations-content .next-movie-list-big-btn {
+  margin-top: 214px;
+}

@@ -31,6 +31,10 @@ li {
   background-color: rgb(197, 240, 236);
 }
 
+.dobraccoon-logo:hover {
+  background-color: rgb(153, 190, 238);
+}
+
 .dobraccoon-logo img {
   width: 100px;
   bottom: auto;

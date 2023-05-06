@@ -10,13 +10,17 @@
 </head>
 
 <body>
+	<h1>🐍_case_list_to🐫CaseListConverter</h1>
 	<div class="main">
-		<h1>🐍_case_list_to🐫CaseListConverter</h1>
-		<textarea class="snake-case-text-area" name="snakeCaseTextArea" cols="30" rows="10"></textarea>
-		<textarea class="camel-case-text-area" name="camelCaseTextArea" cols="30" rows="10"></textarea>
-		<button onclick="convert()">Convert</button>
+		<div class="text-input-block">
+			<textarea class="snake-case-text-area" name="snakeCaseTextArea" cols="30" rows="10"></textarea>
+			<textarea class="camel-case-text-area" name="camelCaseTextArea" cols="30" rows="10"></textarea>
+		</div>
+		<div class="button-block"><button onclick="genetrateExample()">Generate<br>Example</button></div>
+		<div class="button-block"><button onclick="convert()">Convert</button></div>
+		<div class="button-block"><button onclick="cleanInputs()">Clean</button></div>
 	</div>
-	
+
 	<script src="script.js"></script>
 </body>
 

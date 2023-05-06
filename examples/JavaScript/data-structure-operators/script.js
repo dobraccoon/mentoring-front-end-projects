@@ -1,12 +1,12 @@
 "use strict";
 
+let snakeCaseInput = document.getElementsByClassName("snake-case-text-area");
+let camelCaseInput = document.getElementsByClassName("camel-case-text-area");
+let lastExample = "snake_case";
+
 function convert() {
-  const snakeCaseListValue = document.getElementsByClassName(
-    "camel-case-text-area"
-  )[0].value;
-  const cameCaseListValue = document.getElementsByClassName(
-    "snake-case-text-area"
-  )[0].value;
+  const snakeCaseListValue = snakeCaseInput[0].value;
+  const cameCaseListValue = camelCaseInput[0].value;
 
   if (!snakeCaseListValue && !cameCaseListValue)
     throw new Error("All fields are empty");
@@ -14,35 +14,71 @@ function convert() {
   if (snakeCaseListValue && cameCaseListValue)
     throw new Error("All fields are full");
 
-  if (snakeCaseListValue) convertDataFromSnake2CamelCase(snakeCaseListValue);
-  else convertDataFromCamel2SnakeCase(cameCaseListValue);
+  if (snakeCaseListValue) {
+    camelCaseInput[0].value =
+      convertDataFromSnake2CamelCase(snakeCaseListValue);
+  } else {
+    snakeCaseInput[0].value = convertDataFromCamel2SnakeCase(cameCaseListValue);
+  }
 }
 
 function convertDataFromSnake2CamelCase(valuesList) {
-  let result = "test";
-  const splitedWordsArr = valuesList
+  let result = "";
+  valuesList
     .toLowerCase()
     .split("\n")
-    .forEach((element, i) => {
-      element = element.trim();
-      if (i != 0) {
-        element = upperCaseFirstSymbol(element);
-      }
-      result += element + "\n";
+    .forEach((snake_word) => {
+      snake_word = snake_word.trim();
+      let camelCaseWord = "";
+
+      snake_word.split("_").forEach((word, i) => {
+        if (i != 0) {
+          word = upperCaseFirstSymbol(word);
+        }
+        camelCaseWord += word;
+      });
+      result += camelCaseWord + "\n";
     });
-  console.log(result);
   return result;
 }
-function convertDataFromCamel2SnakeCase(valuesList) {}
+function convertDataFromCamel2SnakeCase(valuesList) {
+  let result = "";
+
+  valuesList.split("\n").forEach((camelCaseWord) => {
+    camelCaseWord = camelCaseWord.trim();
+
+    camelCaseWord.split("").forEach((camelCaseWordChar, i) => {
+      if (camelCaseWordChar == camelCaseWordChar.toUpperCase() && i != 0) {
+        camelCaseWordChar = "_" + camelCaseWordChar.toLowerCase();
+      }
+      result += camelCaseWordChar;
+    });
+    result += "\n";
+  });
+
+  return result;
+}
 
 function upperCaseFirstSymbol(word) {
   return word[0].toUpperCase() + word.slice(1, word.length);
 }
 
-function init() {
-  //   document.getElementsByClassName("camel-case-text-area")[0].value = "testCase";
-  document.getElementsByClassName("snake-case-text-area")[0].value =
-    "test_case";
+function genetrateExample() {
+  cleanInputs();
+
+  if (lastExample === "snake_case") {
+    document.getElementsByClassName("camel-case-text-area")[0].value =
+      "multiTastCase\n   testCase   \n   newName ";
+    lastExample = "camelCase";
+  } else {
+    document.getElementsByClassName("snake-case-text-area")[0].value =
+      "multi_test_case\n   test_case   \nnew_name";
+    lastExample = "snake_case";
+  }
 }
-init();
-convert();
+
+function cleanInputs() {
+  snakeCaseInput[0].value = "";
+  camelCaseInput[0].value = "";
+}
+genetrateExample();

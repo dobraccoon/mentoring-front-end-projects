@@ -36,31 +36,31 @@ label:hover {
   color: #85c09d;
 }
 
-.form_radio {
+.form-radio {
   margin-bottom: 10px;
 }
-.form_radio input[type="radio"] {
+.form-radio input[type="radio"] {
   display: none;
 }
 
-.form_radio label:before {
+.form-radio label:before {
   width: 30px;
   height: 30px;
   content: "🔘";
 }
 
 /* Checked */
-.form_radio input[type="radio"]:checked + label:before {
+.form-radio input[type="radio"]:checked + label:before {
   content: "✅";
 }
 
 /* Hover */
-.form_radio label:hover:before {
+.form-radio label:hover:before {
   filter: brightness(120%);
 }
 
 /* Disabled */
-.form_radio input[type="radio"]:disabled + label:before {
+.form-radio input[type="radio"]:disabled + label:before {
   filter: grayscale(100%);
 }
 

@@ -40,7 +40,7 @@ function displayLanguages() {
     const languageName = document.createElement("span");
     const languageScore = document.createElement("span");
 
-    li.className = "form_radio";
+    li.className = "form-radio";
     inputRadio.type = "radio";
     inputRadio.id = i;
     inputRadio.name = "radio";
@@ -76,9 +76,12 @@ function saveAnswer() {
 
     selectedLanguageCurrentScore.textContent = selectedLanguageNewScore;
   } else {
-    throw new Error("Element hasn't been selected");
+    const errorMessageText = "⛔️Element hasn't been selected";
+    alert(errorMessageText);
+    throw new Error(errorMessageText);
   }
 }
 
 displayLanguages();
+
 saveAnswerButton.addEventListener("click", saveAnswer);

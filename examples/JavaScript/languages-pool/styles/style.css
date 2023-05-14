@@ -32,7 +32,7 @@ label {
 
 label:hover {
   position: relative;
-  margin-left: -10px;
+  margin-left: 10px;
   color: #85c09d;
 }
 

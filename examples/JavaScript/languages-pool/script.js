@@ -1,5 +1,7 @@
 "use strict";
 
+const saveAnswerButton = document.querySelector("button");
+
 const languagePoll = {
   question: "What is your favourite programming language?",
   languagesListArr: [
@@ -33,17 +35,23 @@ function displayLanguages() {
 
   languagePoll.languagesListArr.forEach((element, i) => {
     const li = document.createElement("li");
-    li.className = "form_radio";
     const inputRadio = document.createElement("input");
-    inputRadio.type = "radio";
-    inputRadio.id = `radio-${i}`;
-    inputRadio.name = "radio";
     const radioLabel = document.createElement("label");
-    radioLabel.htmlFor = inputRadio.id;
-    radioLabel.appendChild(
-      document.createTextNode(`${element.language}: ${element.rating}`)
-    );
+    const languageName = document.createElement("span");
+    const languageScore = document.createElement("span");
 
+    li.className = "form_radio";
+    inputRadio.type = "radio";
+    inputRadio.id = i;
+    inputRadio.name = "radio";
+    radioLabel.htmlFor = inputRadio.id;
+    languageName.className = "language-name";
+    languageScore.className = "language-score";
+
+    languageName.appendChild(document.createTextNode(`${element.language}: `));
+    languageScore.appendChild(document.createTextNode(element.rating));
+    radioLabel.appendChild(languageName);
+    radioLabel.appendChild(languageScore);
     li.appendChild(inputRadio);
     li.appendChild(radioLabel);
     ul.appendChild(li);
@@ -52,4 +60,25 @@ function displayLanguages() {
   languagesBlock.appendChild(ul);
 }
 
+function saveAnswer() {
+  const selectedItem = document.querySelector('input[name="radio"]:checked');
+
+  if (selectedItem) {
+    const storageElementIndex = Number(selectedItem.id);
+    const selectedLanguageCurrentScore = document
+      .querySelector("label[for='" + storageElementIndex + "']")
+      .querySelector(".language-score");
+
+    languagePoll.languagesListArr[storageElementIndex].rating += 1;
+
+    const selectedLanguageNewScore =
+      languagePoll.languagesListArr[storageElementIndex].rating;
+
+    selectedLanguageCurrentScore.textContent = selectedLanguageNewScore;
+  } else {
+    throw new Error("Element hasn't been selected");
+  }
+}
+
 displayLanguages();
+saveAnswerButton.addEventListener("click", saveAnswer);
